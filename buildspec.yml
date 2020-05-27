@@ -1,0 +1,12 @@
+
+version: 0.2
+phases:
+  install:
+    commands:
+      - sam package --template-file template.yaml --s3-bucket my-deploy-bucket-123 --output-template-file package.yaml
+
+artifacts:
+  type: zip
+  files:
+    - template.yaml
+    - packaged.yaml

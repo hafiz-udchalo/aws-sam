@@ -4,9 +4,6 @@ phases:
   install:
     commands:
       - sam package --template-file template.yaml --s3-bucket my-deploy-bucket-123 --output-template-file package.yaml
-
-artifacts:
-  type: zip
-  files:
-    - template.yaml
-    - packaged.yaml
+  post_build:
+    commads:
+      - sam deploy --template-file package.yaml --stack-name pet-store-stack --capabilities CAPABILITY_IAM

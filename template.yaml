@@ -6,7 +6,7 @@ Resources:
   PetStoreApiGateway: 
     Type: AWS::Serverless::Api
     Properties:
-      StageName: Prod
+      StageName: prod
       DefinitionUri: ./swagger.yaml
   PostPetFunction:
     Type: AWS::Serverless::Function
@@ -43,4 +43,4 @@ Resources:
 Outputs:
   PetStoreApiGateway:
     Description: 'API Gateway endpoint URL for Staging stage for Hello World function'
-    Value: !Sub 'https://${PetStoreApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Prod/'
+    Value: !Sub 'https://${PetStoreApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/'

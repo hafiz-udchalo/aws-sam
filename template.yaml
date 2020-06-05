@@ -40,7 +40,3 @@ Resources:
             Method: GET
       Policies:
         - AWSLambdaBasicExecutionRole
-Outputs:
-  PetStoreApiGateway:
-    Description: 'API Gateway endpoint URL for Staging stage for Hello World function'
-    Value: !Sub 'https://${PetStoreApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/'
